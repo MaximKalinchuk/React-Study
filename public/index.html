@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>React Tasks</title>
+  </head>
+  <body>
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarText">
+           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+               <a class="nav-link active" aria-current="page" href="#">О проекте</a>
+             </li>
+             <li class="nav-item" data-err="err">
+               <a class="nav-link" href="#">Контакты</a>
+             </li>
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Задания
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Форма регистрации</a></li>
+                <li><a class="dropdown-item" href="#">Плюс / Минус</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+           </ul>
+           </div>
+        </div>
+      </nav>
+  
+    <div class="container" style="width: 60%; margin-top: 20px">
+      <h5 class="display-5">Инфо</h5>
+      <p class="lead">
+        Суть данного сайта в том, что на нём будут размещены общие задачи по React, с различных курсов. Уточню, тут не будет готового решения,
+        только визуальное представление и описание задач. Во избежания претензий на плагиат некоторые задачи видоизменены.
+        Все задачи выполнены исключительно на React. Сделано это для демонстрации навыков работодателю и чтобы данные таски не были утеряны со временем. 
+        Если у вас есть свободное время, вы можете пробовать реализовать их самостоятельно.
+      </p>
+      <p class="lead">
+        Сверху представлен список задач
+      </p>
+      <div class="lead">
+        <h5 class="display-5">Задание 1 - Форма регистрации</h5>
+        <p class="lead">
+          После отправки формы появляется таблица, в которой показываются значения всех полей. 
+          Из этой формы можно вернуться в редактирование по кнопке Back. При этом все данные оказаются на своих местах.
+        </p>
+        <div id='regForm'></div>
+      </div>
+      <br>
+      <div class="lead">
+        <h5 class="display-5">Задание 2 - Плюс / Минус</h5>
+        <p class="lead">
+          Нажмите на +, чтобы добавить новую кнопка в верх списка. На -, чтобы удалить кнопку сперху списка. Также при нажании на сами кнопки, они удаляется.
+        </p>
+        <div id='plusMinus'></div>
+      </div>
+    </div>
+    <footer class="footer border-top py-3 mt-5 bg-light">
+      <div class="container-xl">
+        <div class="text-center">created by <a href="https://github.com/MaximKalinchuk" target="_blank">Max</a></div></div></footer>
+        <script type="text/jsx" src="../src/err.js"></script>
+  </body>
+ 
+</html>
