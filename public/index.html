@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
     <title>React Tasks</title>
   </head>
   <body>
@@ -16,7 +17,7 @@
                <a class="nav-link active" aria-current="page" href="#">О проекте</a>
              </li>
              <li class="nav-item" data-err="err">
-               <a class="nav-link" href="#">Контакты</a>
+               <a class="nav-link" href="https://github.com/MaximKalinchuk" target="_blank">GitHub</a>
              </li>
              <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -25,6 +26,7 @@
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="#">Форма регистрации</a></li>
                 <li><a class="dropdown-item" href="#">Плюс / Минус</a></li>
+                <li><a class="dropdown-item" href="#">ToDo лист</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
               </ul>
@@ -35,16 +37,17 @@
       </nav>
   
     <div class="container" style="width: 60%; margin-top: 20px">
-      <h5 class="display-5">Инфо</h5>
+      <h5 class="display-5">О проекте</h5>
       <p class="lead">
         Суть данного сайта в том, что на нём будут размещены общие задачи по React, с различных курсов. Уточню, тут не будет готового решения,
-        только визуальное представление и описание задач. Во избежания претензий на плагиат некоторые задачи видоизменены.
+        только визуальное представление и описание задач. Во избежание претензий на плагиат некоторые задачи изменены.
         Все задачи выполнены исключительно на React. Сделано это для демонстрации навыков работодателю и чтобы данные таски не были утеряны со временем. 
         Если у вас есть свободное время, вы можете пробовать реализовать их самостоятельно.
       </p>
       <p class="lead">
-        Сверху представлен список задач
+        Сверху представлен список задач.
       </p>
+      <hr>
       <div class="lead">
         <h5 class="display-5">Задание 1 - Форма регистрации</h5>
         <p class="lead">
@@ -54,18 +57,30 @@
         <div id='regForm'></div>
       </div>
       <br>
+      <hr>
       <div class="lead">
         <h5 class="display-5">Задание 2 - Плюс / Минус</h5>
         <p class="lead">
-          Нажмите на +, чтобы добавить новую кнопка в верх списка. На -, чтобы удалить кнопку сперху списка. Также при нажании на сами кнопки, они удаляется.
+          Нажмите на +, чтобы добавить новую кнопка в верх списка. На -, чтобы добавить кнопку с числом на 1 меньше предыдущего. Также при нажании на сами кнопки, они удаляются.
         </p>
         <div id='plusMinus'></div>
       </div>
+      <br>
+      <hr>
+      <div class="lead">
+        <h5 class="display-5">Задание 3 - ToDo лист</h5>
+        <p class="lead">
+          Формирует список ваших тасков. Нажмите минус, чтобу удалить текущий таск.
+        </p>
+        <div id='todo'></div>
+      </div>
+      <br>
+      <hr>
     </div>
     <footer class="footer border-top py-3 mt-5 bg-light">
       <div class="container-xl">
-        <div class="text-center">created by <a href="https://github.com/MaximKalinchuk" target="_blank">Max</a></div></div></footer>
-        <script type="text/jsx" src="../src/err.js"></script>
+        <div class="text-center">created by <a href="https://github.com/MaximKalinchuk" target="_blank">Maxim Kalinchuk</a></div></div></footer>
+        <script src="./style.css"></script>
   </body>
  
 </html>
