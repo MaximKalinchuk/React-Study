@@ -6,3 +6,47 @@
 .todo {
     text-align: center;
 }
+
+footer {
+    color: rgb(255, 255, 255);
+    height: 235px;
+}
+
+footer a {
+    text-decoration: none;
+    color: rgb(184, 184, 184);
+}
+
+footer a:hover{
+    color: rgb(255, 255, 255);
+}
+
+.name {
+    color: white;
+}
+
+.name:hover {
+    color: rgb(39, 103, 240);
+}
+
+.footer-li {
+    list-style-type: none;
+    padding: 0;
+}
+
+.column {
+    margin-top: 10px;
+    column-count: 3;
+    column-gap: 0px;
+    column-width: 200px;
+}
+
+.column p {
+    color: rgb(184, 184, 184);
+    width: 600px;
+}
+
+.mycontainer {
+    width: 800px;
+    margin-left: 400px;
+}
