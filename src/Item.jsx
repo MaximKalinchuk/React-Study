@@ -18,7 +18,7 @@ export default class Item extends React.Component {
 
     return (
       <>
-      {activeTasks.length !== 0 && <div className="alert alert-primary" role="alert">Новый задачи:</div>}
+      {activeTasks.length !== 0 && <div className="alert alert-primary" role="alert">Новые задачи:</div>}
         {activeTasks.map(( {id, text} ) => {
           return (   
             <div key={id}>
