@@ -16,4 +16,4 @@
 
 ### Пример ToDo листа: ###
 
-<img src="https://i.ibb.co/7JrwLcT/Screenshot-from-2022-06-20-18-17-35.png" alt="drawing" width="900"/>
+<img src="https://i.ibb.co/1KXhQXt/Screenshot-from-2022-06-20-18-35-31.png" alt="drawing" width="900"/>
