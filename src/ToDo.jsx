@@ -1,85 +1,113 @@
 import { uniqueId } from 'lodash';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Item from './Item.jsx';
 
-export default class TodoBox extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { inputForm: '', tasks: []};
-  }
+const TodoBox = () => {
 
-  componentDidMount = () => {
+  const [form, setForm] = useState('')
+  const [tasks, setTasks] = useState([])
+  const [page, setPage] = useState('primary')
+
+
+  useEffect(() => {
     const tasks = localStorage.getItem('myTasks')
     if (tasks !== null) {
       const normalTasksObject = JSON.parse(tasks)
-      // console.log(normalTasksObject)
-      this.setState(({tasks}) => ({ tasks: normalTasksObject }))
+      setTasks(normalTasksObject)
   }
-}
+}, []);
 
-  handleUpdate = (id) => (e) => {
+  const handleUpdate = (id) => (e) => {
     e.preventDefault();
-    const { tasks } = this.state
     const resultState = tasks.map((item) => {
       if (item.id === id) {
         item.state = 'finished'
       }
       return item
     })
-    this.setState((tasks) => ({ tasks: resultState }))
+    setTasks(resultState)
     localStorage.setItem('myTasks', JSON.stringify(resultState))
   }
 
-  handleRemove = (id) => (e) => {
+  const handleRemove = (id) => (e) => {
     e.preventDefault();
-    const { tasks } = this.state
     const resultState = tasks.filter((item) => item.id !== id)
-    this.setState((tasks) => ({ tasks: resultState }))
+    setTasks(resultState)
     localStorage.setItem('myTasks', JSON.stringify(resultState))
   }
 
-  handleChanged = (e) => {
+  const handleComeBack = (id) => (e) => {
+    e.preventDefault();
+    const resultState = tasks.map((item) => {
+      if (item.id === id) {
+        item.state = 'active'
+      }
+      return item
+    })
+    setTasks(resultState)
+    localStorage.setItem('myTasks', JSON.stringify(resultState))
+  }
+
+  const handleChanged = (e) => {
     e.preventDefault();
     const text = e.target.value
-    this.setState(({ inputForm }) => ({inputForm: text}))
+    setForm(text)
   }
 
-  addTask = (e) => {
+  const addTask = (e) => {
     e.preventDefault()
-    const task = this.state.inputForm
-    const taskFromState = this.state.tasks
 
-    if (this.state.tasks.length !== 0 && task.length !== 0) {
-      const allID = taskFromState.map((item) => item.id)
+    if (tasks.length !== 0 && form.length !== 0) {
+      const allID = tasks.map((item) => item.id)
       const maxID = Math.max(...allID)
-      const newTask = { id: `${maxID + 1}`, text: task, state: 'active'}
+      const newTask = { id: `${maxID + 1}`, text: form, state: 'active'}
 
-      this.setState({ inputForm: '', tasks: [newTask, ...taskFromState] })
-      localStorage.setItem('myTasks', JSON.stringify([newTask, ...taskFromState]))
+      setForm('')
+      setTasks([newTask, ...tasks])
+      localStorage.setItem('myTasks', JSON.stringify([newTask, ...tasks]))
     }
 
-    if (this.state.tasks.length === 0 && task.length !== 0) {
-      const newTask = { id: uniqueId(), text: task, state: 'active'}
-      this.setState({ inputForm: '', tasks: [newTask, ...taskFromState] })
-      localStorage.setItem('myTasks', JSON.stringify([newTask, ...taskFromState]))
+    if (tasks.length === 0 && form.length !== 0) {
+      const newTask = { id: uniqueId(), text: form, state: 'active'}
+      setForm('')
+      setTasks([newTask, ...tasks])
+      localStorage.setItem('myTasks', JSON.stringify([newTask, ...tasks]))
+    }
+
+    setPage('primary')
+  }
+
+  const updatePage = (e) => {
+    const currentButton = e.target.textContent
+    if (currentButton === 'Ваши задачи') {
+      setPage('primary')
+    }
+    if (currentButton === 'Выполненные задачи') {
+      setPage('success')
     }
   }
 
-  render() {
+
     return (
       <div>
+        <div>
+        </div>
         <div className="mb-3">
-          <form className="d-flex todo" onSubmit={this.addTask}>
+          <form className="d-flex todo" onSubmit={addTask}>
             <div className="me-3 col-sm-5">
-              <input type="text" value={this.state.inputForm} required="" onChange={this.handleChanged} className="form-control" placeholder="Введите вашу задачу" />
+              <input type="text" value={form} required="" onChange={handleChanged} className="form-control" placeholder="Введите вашу задачу" />
             </div>
             <button type="submit" className="btn btn-primary">Добавить задачу</button>
           </form>
         </div>
-        <Item handleUpdate={this.handleUpdate}  handleRemove={this.handleRemove} tasks={this.state.tasks} />
+
+        <button type="button" className="btn btn-primary" onClick={updatePage}>Ваши задачи</button>
+        <button type="button" className="btn btn-success" onClick={updatePage} style={{marginLeft: '10px'}}>Выполненные задачи</button>
+        <hr />
+        <Item handleUpdate={handleUpdate}  handleRemove={handleRemove} tasks={tasks} page={page} handleComeBack={handleComeBack}/>
       </div>
     )
-  }
 }
 
+export default TodoBox;
 // localStorage.clear()

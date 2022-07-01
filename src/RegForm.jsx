@@ -43,11 +43,11 @@ export default class MyForm extends React.Component {
     }
   
     render() {
-    const styles = {
-        textAlign: 'center'
-    }
+    // const styles = {
+    //     textAlign: 'center'
+    // }
 
-    console.log('styles', styles)
+    // console.log('styles', styles)
       if (this.state.edit) {
         return (
         <div>
@@ -86,7 +86,7 @@ export default class MyForm extends React.Component {
     } else {
         return (
           <center><form onSubmit={this.hundleSubmit} name="myForm" >
-            <h6 class="display-6">Введите данные:</h6>
+            <h6 className="display-6">Введите данные:</h6>
             <div className="col-md-6 mb-3" >
               <label htmlFor="email" className="col-form-label">Email</label>
               <input type="email" onChange={this.emailChanged} name="email" className="form-control" id="email" placeholder="Введите почту" value={this.state.email} />
