@@ -7,121 +7,61 @@
     <link rel="stylesheet" href="./style.css">
     <title>React Tasks</title>
   </head>
-  <body>
-
-      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <body class="d-flex flex-column min-vh-100">
+    <div class="page">
+      <div id="modal"></div>
         <div class="container-fluid">
-          <div class="collapse navbar-collapse" id="navbarText">
-           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-             <li class="nav-item">
-               <a class="nav-link active" aria-current="page" href="#">О проекте</a>
-             </li>
-             <li class="nav-item" data-err="err">
-               <a class="nav-link" href="https://github.com/MaximKalinchuk" target="_blank">GitHub</a>
-             </li>
-             <!-- <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Задания
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Форма регистрации</a></li>
-                <li><a class="dropdown-item" href="#">Плюс / Минус</a></li>
-                <li><a class="dropdown-item" href="#">ToDo лист</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <div class="header row"></div>
+        </div>
+    <main class="main">
+    <div class="container-fluid">
+      <div class="row todoApp">
+          <div id='todo'></div>
+      </div>
+    </div>      
+      <br>
+  </main>
+      <footer class="footer mt-5 bg-dark p-3">
+        <div class="container p-4 pb-0">
+          <div class="row">
+            <div class="col">
+              <div class="block">
+                <h5>Проекты:</h5>
+                <ul class="footer-li">
+                  <li><a href="https://github.com/MaximKalinchuk/backend-project-lvl1" target="_blank">Brain Games</a></li>
+                  <li><a href="https://github.com/MaximKalinchuk/frontend-project-lvl2" target="_blank">Difference Generator</a></li>
+                  <li><a href="https://github.com/MaximKalinchuk/frontend-project-lvl3" target="_blank">RSS aggregator</a></li>
+                  <li><a href="https://maximkalinchuk.github.io/" target="_blank">Personal website</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col">
+              <div class="block">
+              <h5>Контакты:</h5>
+              <ul class="footer-li">
+                <li><a href="https://hh.ru/resume/0a0be16dff09c678450039ed1f6c7255773775" target="_blank">Резюме</a></li>
+                <li><a href="https://app.slack.com/client/T06BMRFQB" target="_blank">Hexlet Slack</a></li>
+                <li><a href="https://github.com/MaximKalinchuk" target="_blank">GitHub</a></li>
               </ul>
-            </li> -->
-           </ul>
-           </div>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="block">
+                <h5>О себе:</h5>
+                <p>С лета 2021 года учусь в онлайн-школе программирования Хекслет по профессии Frontend-разработчик.</p>
+              </div>
+            </div>
+          </div>
+        </div>   
+        <div class="row">
+          <hr>
+          <div class="text-center"><img width="55px" src="https://crimeadigital.ru/wp-content/uploads/tilda/1053879/pages/12196033/tild3837-3833-4837-b832-333430306334__1200px-react-iconsvg.png" alt="Картинка">created by <a href="https://github.com/MaximKalinchuk" target="_blank" class="name">Max</a></div>
         </div>
-      </nav>
-  
-    <div class="container" style="width: 60%; margin-top: 20px">
-      <h5 class="display-5">О проекте</h5>
-      <p class="lead">
-        Суть данного сайта в том, что на нём будут размещены общие задачи на React, которые я решал. Сделано это для демонстрации навыков работодателю.
-        Если у вас есть свободное время, можете пробовать реализовать их самостоятельно.    
-      </p>
-      <hr>
-      <div class="lead">
-        <h5 class="display-5">Задание - ToDo лист</h5>
-        <p class="lead">
-          Формирует список ваших задач. Если нажать на зелёную галочку, таск переносится в раздел выполненных задач. Также при нажатии на красный крестик, в разделе 
-          выполненные задачи, таск полностью удаляется. Задачу можно вернуть обратно, если случайно нажали на зеленую галочку. Состояние сохраняется в LocalStorage. 
-        </p>
-        <div id='todo'></div>
-      </div>
-      <br>
-      <hr> 
-      
-      <div class="lead">
-        <h5 class="display-5">Задание - Форма регистрации</h5>
-        <p class="lead">
-          После отправки формы появляется таблица, в которой показываются значения всех полей. 
-          Из этой формы можно вернуться в редактирование. При этом все данные оказываются на своих местах.
-        </p>
-        <div id='regForm'></div>
-      </div>
-      <br>
+      </footer>
     </div>
-    <footer class="footer border-top py-3 mt-5 bg-dark">
-      <div class="mycontainer">
-        <article class="column">
-        <h5>Проекты:</h5>
-        <ul class="footer-li">
-          <li><a href="https://github.com/MaximKalinchuk/backend-project-lvl1" target="_blank">Brain Games</a></li>
-          <li><a href="https://github.com/MaximKalinchuk/frontend-project-lvl2" target="_blank">Difference Generator</a></li>
-          <li><a href="https://github.com/MaximKalinchuk/frontend-project-lvl3" target="_blank">RSS aggregator</a></li>
-          <li><a href="https://maximkalinchuk.github.io/" target="_blank">Personal website</a></li>
-        </ul>
-        <h5>Контакты:</h5>
-          <ul class="footer-li">
-            <li><a href="https://hh.ru/resume/0a0be16dff09c678450039ed1f6c7255773775" target="_blank">Резюме</a></li>
-            <li><a href="https://app.slack.com/client/T06BMRFQB" target="_blank">Hexlet Slack</a></li>
-            <li><a href="https://github.com/MaximKalinchuk" target="_blank">GitHub</a></li>
-            
-        </ul>
-        <h5>О себе:</h5>
-          <p>С лета 2021 года учусь в онлайн-школе программирования Хекслет по профессии Frontend-разработчик.</p>
-      </article>
-      </div>
-      <hr>
-      <div class="text-center"><img width="55px" src="https://crimeadigital.ru/wp-content/uploads/tilda/1053879/pages/12196033/tild3837-3833-4837-b832-333430306334__1200px-react-iconsvg.png" alt="Картинка">created by <a href="https://github.com/MaximKalinchuk" target="_blank" class="name">Max</a>
-      </div>
-    </footer>
-    <!-- <div>
-      <div class="mb-3">
-        <form class="todo-form mx-3">
-          <div class="d-flex col-md-3">
-            <input type="text" value="" required="" class="form-control me-3" placeholder="I am going...">
-            <button type="submit" class="btn btn-primary">add</button>
-          </div>
-        </form>
-      </div>
-      <div class="todo-active-tasks">
-        <div class="row">
-          <div class="col-1">2</div>
-          <div class="col">
-            <a href="#" class="todo-task">second task</a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-1">1</div>
-          <div class="col">
-            <a href="#" class="todo-task">first task</a>
-          </div>
-        </div>
-      </div>
-      <div class="todo-finished-tasks">
-        <div class="row">
-          <div class="col-1">3</div>
-          <div class="col">
-            <s><a href="#" class="todo-task">another task</a></s>
-          </div>
-        </div>
-      </div>
-    </div> -->
         <script src="./style.css"></script>
+
   </body>
  
 </html>
